@@ -21,8 +21,11 @@ class ListTableViewController: UITableViewController {
         searchController.searchBar.sizeToFit()
         searchController.searchBar.delegate = searchResultsController
         
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        
         tableView.tableHeaderView = searchController.searchBar
-//        definesPresentationContext = true //bad idea
+        self.definesPresentationContext = true
         
         self.navigationController?.visibleViewController?.title = "First View"
     }

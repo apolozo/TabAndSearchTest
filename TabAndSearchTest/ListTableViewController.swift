@@ -22,9 +22,9 @@ class ListTableViewController: UITableViewController {
         searchController.searchBar.delegate = searchResultsController
         
         tableView.tableHeaderView = searchController.searchBar
-        definesPresentationContext = true
+//        definesPresentationContext = true //bad idea
         
-        self.navigationController?.visibleViewController.title = "First View"
+        self.navigationController?.visibleViewController?.title = "First View"
     }
     
     
@@ -39,7 +39,7 @@ class ListTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ListCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("ListCell", forIndexPath: indexPath) 
         
         cell.textLabel?.text = "Cool data!"
         

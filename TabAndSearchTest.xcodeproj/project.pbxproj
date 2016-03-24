@@ -11,7 +11,6 @@
 		70BFB01F1AF2D5090081CDCF /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BFB01C1AF2D5090081CDCF /* ListTableViewController.swift */; };
 		70BFB0201AF2D5090081CDCF /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BFB01D1AF2D5090081CDCF /* SearchResultsTableViewController.swift */; };
 		70BFB0211AF2D5090081CDCF /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BFB01E1AF2D5090081CDCF /* SecondViewController.swift */; };
-		70BFB0231AF2D51E0081CDCF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 70BFB0221AF2D51E0081CDCF /* Info.plist */; };
 		70BFB0251AF2D5230081CDCF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70BFB0241AF2D5230081CDCF /* Images.xcassets */; };
 		70BFB02A1AF2D5340081CDCF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 70BFB0261AF2D5340081CDCF /* LaunchScreen.xib */; };
 		70BFB02B1AF2D5340081CDCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70BFB0281AF2D5340081CDCF /* Main.storyboard */; };
@@ -106,7 +105,9 @@
 		70CB324A1AF2B8C60097630B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftMigration = 0730;
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = albertbori;
 				TargetAttributes = {
 					70CB32511AF2B8C60097630B = {
@@ -137,7 +138,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70BFB0231AF2D51E0081CDCF /* Info.plist in Resources */,
 				70BFB02A1AF2D5340081CDCF /* LaunchScreen.xib in Resources */,
 				70BFB0251AF2D5230081CDCF /* Images.xcassets in Resources */,
 				70BFB02B1AF2D5340081CDCF /* Main.storyboard in Resources */,
@@ -201,6 +201,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -267,6 +268,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TabAndSearchTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.albertbori.ios.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = TabAndSearchTest;
 			};
 			name = Debug;
@@ -277,6 +279,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TabAndSearchTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.albertbori.ios.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = TabAndSearchTest;
 			};
 			name = Release;

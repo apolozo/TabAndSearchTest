@@ -29,7 +29,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchBarDelega
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("SearchCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("SearchCell", forIndexPath: indexPath) 
 
         cell.textLabel?.text = tableData[indexPath.row]
 

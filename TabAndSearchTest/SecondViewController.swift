@@ -13,7 +13,7 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.visibleViewController.title = "Second View"
+        self.navigationController?.visibleViewController?.title = "Second View"
     }
 }
 

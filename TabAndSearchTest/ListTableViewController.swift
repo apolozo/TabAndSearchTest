@@ -8,10 +8,13 @@
 
 import UIKit
 
-class ListTableViewController: UITableViewController {
+class ListTableViewController: UITableViewController, UITabBarControllerDelegate {
 
     var searchResultsController = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("SearchResultsTableViewController") as! SearchResultsTableViewController
     var searchController: UISearchController!
+    
+    var savedSearchText = ""
+    var searchMustBeActive = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +31,25 @@ class ListTableViewController: UITableViewController {
         self.definesPresentationContext = true
         
         self.navigationController?.visibleViewController?.title = "First View"
+        self.tabBarController?.delegate = self;
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        searchController.active = searchMustBeActive
+        searchController.searchBar.text = savedSearchText
+        
+        savedSearchText = ""
+        searchMustBeActive = false
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        if searchController.active {
+            searchMustBeActive = true;
+            savedSearchText = searchController.searchBar.text!
+        }
+    }
     
     // MARK: - Table view data source
     
@@ -50,5 +70,17 @@ class ListTableViewController: UITableViewController {
     }
 
 
+    //MARK: - UITabBarControllerDelegate
+    
+    func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
+        
+        if tabBarController.selectedIndex > 0 {
+            if searchController.active {
+                searchMustBeActive = true;
+                savedSearchText = searchController.searchBar.text!
+                searchController.active = false
+            }
+        }
+    }
 }
 
